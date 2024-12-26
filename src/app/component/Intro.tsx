@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CodeBlock from "./ui/CodeBlock";
-import { Code } from "lucide-react";
 
 const aboutme = [
     "Software Engineer.",
@@ -65,8 +64,9 @@ const Intro = () => {
                     </AnimatePresence>
                 </motion.h1>
                 <h2 className="text-extralight font-extralight md:ml-28 text-center sm:text-left">
-                    Turning Your 'I Don't Know How This Works' Into 'Wow, It Actually Works!'
+                    Turning Your &apos;I Don&apos;t Know How This Works&apos; Into &apos;Wow, It Actually Works!&apos;
                 </h2>
+
             </motion.div>
             <CodeBlock />
         </div>

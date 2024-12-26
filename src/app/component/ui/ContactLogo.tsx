@@ -1,6 +1,10 @@
 import React from 'react'
 import { motion } from "framer-motion"
-const ContactLogo = ({ children, link }: any) => {
+interface ContactTypes{
+  children : React.ReactNode,
+  link : string
+}
+const ContactLogo = ({ children, link }: ContactTypes) => {
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}

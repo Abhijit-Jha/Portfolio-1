@@ -10,7 +10,6 @@ import GlowEffect from "../ui/GlowEffect";
 import ScrollEffect from "../ui/ScrollEffect";
 import WhoAmI from "../WhoAmI";
 
-
 export function Landing() {
   return (
     <div suppressHydrationWarning>

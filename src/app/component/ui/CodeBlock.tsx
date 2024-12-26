@@ -1,4 +1,4 @@
-import React, { act, useState } from "react";
+import React, {useState } from "react";
 import { motion } from "framer-motion";
 import { contact } from "../utils/contactLinks";
 enum Contacts {

@@ -1,5 +1,5 @@
 "use client";
-import { Landing } from "./components/pages/Landing";
+import { Landing } from "./component/pages/Landing";
 
 export default function Home() {
   return (

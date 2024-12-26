@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
 interface ButtonTypes {
-    text : String,
+    text : string,
     link : string | URL | undefined 
 }
 const Button1 = ({ text , link } : ButtonTypes ) => {

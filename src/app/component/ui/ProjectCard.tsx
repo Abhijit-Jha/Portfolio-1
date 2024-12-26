@@ -2,8 +2,15 @@ import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github,View,SquareArrowOutUpRight } from 'lucide-react';
 import { motion } from "framer-motion";
-
-const ProjectCard = ({ title, description, image,source_code,live_demo }:any) => {
+import Image, { StaticImageData } from "next/image"
+interface ProjectTypes {
+  title : string
+  description : string,
+  image : StaticImageData,
+  source_code : string,
+  live_demo : string
+}
+const ProjectCard = ({ title, description, image,source_code,live_demo }: ProjectTypes) => {
   return (
     <div className="p-1">
       <Card className="shadow-md rounded-lg p-4">
@@ -12,8 +19,8 @@ const ProjectCard = ({ title, description, image,source_code,live_demo }:any) =>
             <SquareArrowOutUpRight className="size-4 " />
           </div>
           <div className="w-full h-80 overflow-hidden flex justify-center">
-            <img
-              src={image.src}
+            <Image
+              src={image}
               alt="Project Image"
               className="md:w-5/6 h-52 w-full object-contain rounded-md"
             />
@@ -34,8 +41,12 @@ const ProjectCard = ({ title, description, image,source_code,live_demo }:any) =>
   );
 };
 
+interface ButtonTypes{
+  children : React.ReactNode,
+  link : string
+}
 
-export const ButtonWithIcon = ({ children,link}: any) => {
+export const ButtonWithIcon = ({ children,link}: ButtonTypes ) => {
   return <motion.button
     whileHover={{ background: "#2680F3" }}
     onClick={()=>window.open(link)}

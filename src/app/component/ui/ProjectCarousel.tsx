@@ -21,7 +21,7 @@ export function ProjectCarousel() {
 
         {projects.map((project, index) => (
           <CarouselItem key={index} className="pt-1 md:basis-1/2 h-screen">
-            <ProjectCard key={index} title={project.title} description={project.description} source_code={project["source-code"]} live_demo={project["live-demo"]} image={project["image"]}/>
+            <ProjectCard key={index} title={project.title} description={project.description} source_code={project["source-code"]} live_demo={project["live-demo"]} image={project["image"]} />
           </CarouselItem>
         ))}
         <CarouselItem key={"last"} className="pt-1 md:basis-1/2 h-screen">
