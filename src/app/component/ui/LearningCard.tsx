@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface ImageData {
-    src: any;
+    src: StaticImageData;
     alt: string;
 }
 

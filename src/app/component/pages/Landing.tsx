@@ -1,6 +1,4 @@
 "use client";
-
-import { Timeline } from "@/components/ui/timeline";
 import Footer from "../Footer";
 import Header from "../Header";
 import KnowMe from "../KnowMe";
