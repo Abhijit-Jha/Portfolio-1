@@ -5,7 +5,9 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import mypic3 from "../../../lib/store/mypics/dump.jpg";
+import mypic1 from "../../../lib/store/mypics/pic1.jpg";
+import mypic2 from "../../../lib/store/mypics/pic2.jpg";
+import mypic3 from "../../../lib/store/mypics/pic3.jpg";
 import Image from "next/image";
 
 const Carousell = () => {
@@ -16,14 +18,14 @@ const Carousell = () => {
                 <CarouselContent>
                     <CarouselItem key="image-1">
                         <Image
-                            src={mypic3}
+                            src={mypic1}
                             alt="First carousel image"
                             className="object-cover h-96 w-96"
                         />
                     </CarouselItem>
                     <CarouselItem key="image-2">
                         <Image
-                            src={mypic3}
+                            src={mypic2}
                             alt="Second carousel image"
                             className="object-cover h-96 w-96"
                         />

@@ -1,0 +1,9 @@
+
+global:
+  scrape_interval: 15s 
+
+scrape_configs:
+  - job_name: 'nextjs-metrics'
+    static_configs:
+      - targets: ['localhost:3000']  # Make sure to use the correct host and port
+    metrics_path: '/metrics'  # This is where Prometheus will scrape the metrics

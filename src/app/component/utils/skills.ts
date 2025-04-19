@@ -3,6 +3,7 @@ export const skills = {
     "Backend" : ["NodeJS","Hono","Express.js"],
     "Databases" : ["PostgreSQL","SQL","MongoDB","Redis"],
     "Testing" :["Jest","Vitest","Cypress"],
-    "Cloud" : ["AWS","Azure","Vercel"],
+    "Cloud" : ["AWS","Azure","Vercel","GCP"],
+    "App Development" : ["React-native", "Expo"],
     "Others" : ["WebSockets","WebRTC","gRPC","CI/CD","JWT","Docker"]
 }

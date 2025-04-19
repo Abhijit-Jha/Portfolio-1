@@ -32,7 +32,7 @@ const CodeBlock = () => {
                 damping: 30,
                 delay: 0.5
             }} 
-            className="sm:w-full w-fit sm:max-w-lg p-4 bg-gray-800 text-white rounded-lg shadow-lg absolute lg:top-1/ md:top-1/2 top-1/2 lg:left-1/3 md:left-1/4 sm:left-28 left-6 transform translate-x-1/2 translate-y-1/2 "
+            className="sm:w-full mt-10 w-fit sm:max-w-lg p-4 bg-gray-800 text-white rounded-lg shadow-lg absolute lg:top-1/ md:top-1/2 top-1/2 lg:left-1/3 md:left-1/4 sm:left-28 left-6 transform translate-x-1/2 translate-y-1/2 "
         >
             <div className="flex space-x-4">
                 {Object.keys(commands).map((tab) => {

@@ -52,7 +52,7 @@ const Intro = () => {
                             {aboutme[currentIndex].split("").map((letter, letterIndex) => (
                                 <motion.span
                                     key={`${currentIndex}-${letterIndex}`}
-                                    className="text-blue-700 inline-block text-lg sm:text-4xl lg:text-5xl"
+                                    className="text-blue-700 inline-block text-lg sm:text-4xl lg:text-5xl "
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: letterIndex * 0.1 }}

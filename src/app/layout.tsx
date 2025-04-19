@@ -14,14 +14,49 @@ const geistMono = Geist_Mono({
 
 const martelS = Martel_Sans({
   weight: ["200", "300", "400", "600", "700", "800", "900"],
-  variable : "--font-martel-sans",
+  variable: "--font-martel-sans",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Abhijit Jha",
-  description: "Professional Portfolio",
+  title: "Abhijit Jha | Full Stack & Mobile App Developer",
+  description:
+    "Welcome to the official portfolio of Abhijit Jha — a third-year engineering student, full-stack developer, React Native expert, and stock market investor. Explore my work in web, mobile, blockchain, and more at abhijit.website.",
+  keywords: [
+    "Abhijit Jha",
+    "abhijit.website",
+    "Full Stack Developer",
+    "React Developer",
+    "React Native Developer",
+    "Expo",
+    "Next.js",
+    "Node.js",
+    "Software Engineer Portfolio",
+    "Engineering Student",
+    "Blockchain Developer",
+    "Stock Market Investor",
+  ],
+  authors: [{ name: "Abhijit Jha", url: "https://abhijit.website" }],
+  creator: "Abhijit Jha",
+  metadataBase: new URL("https://abhijit.website"),
+  openGraph: {
+    title: "Abhijit Jha | Full Stack & Mobile App Developer",
+    description:
+      "Explore Abhijit Jha's portfolio showcasing expertise in full-stack web & mobile development, blockchain, and AI-driven systems. Visit abhijit.website.",
+    url: "https://abhijit.website",
+    siteName: "Abhijit Jha Portfolio",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhijit Jha | Full Stack & Mobile App Developer",
+    description:
+      "Check out the portfolio of Abhijit Jha, a passionate software engineer skilled in web, mobile, blockchain, and investing.",
+    creator: "", //TODO 
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -30,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body 
+      <body
         className={`${geistSans.variable} ${geistMono.variable} ${martelS.variable} antialiased`}
         suppressHydrationWarning
       >
