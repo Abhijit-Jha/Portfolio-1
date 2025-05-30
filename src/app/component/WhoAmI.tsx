@@ -15,6 +15,6 @@ const WhoAmI = () => {
       <AboutMe />
     </motion.div>
   )
-}
+};
 
-export default WhoAmI
+export default WhoAmI;

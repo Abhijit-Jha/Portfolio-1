@@ -1,35 +1,23 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import ProjectCard from "./ProjectCard"
-import { projects } from "../utils/projects"
-import SeeMoreCard from "./SeeMoreCard"
+import ProjectCard from "./ProjectCard";
+import { projects } from "../utils/projects";
+import SeeMoreCard from "./SeeMoreCard";
+
 export function ProjectCarousel() {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      orientation="vertical"
-      className="lg:w-1/2 md:w-3/4 w-full mt-10"
-    >
-      <CarouselContent className="mt-1 max-h-screen">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={index}
+          title={project.title}
+          description={project.description}
+          source_code={project["source-code"]}
+          live_demo={project["live-demo"]}
+          image={project.image}
+        />
+      ))}
 
-        {projects.map((project, index) => (
-          <CarouselItem key={index} className="pt-1 md:basis-1/2 h-screen">
-            <ProjectCard key={index} title={project.title} description={project.description} source_code={project["source-code"]} live_demo={project["live-demo"]} image={project["image"]} />
-          </CarouselItem>
-        ))}
-        <CarouselItem key={"last"} className="pt-1 md:basis-1/2 h-screen">
-          <SeeMoreCard />
-        </CarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  )
+      {/* Optional: Add a See More card at the end */}
+      <SeeMoreCard />
+    </div>
+  );
 }

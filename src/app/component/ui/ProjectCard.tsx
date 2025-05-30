@@ -1,39 +1,55 @@
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github,View,SquareArrowOutUpRight } from 'lucide-react';
+import { Github, SquareArrowOutUpRight, Globe } from 'lucide-react';
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image"
+import Image, { StaticImageData } from "next/image";
+
 interface ProjectTypes {
-  title : string
-  description : string,
-  image : StaticImageData,
-  source_code : string,
-  live_demo : string
+  title: string;
+  description: string;
+  image?: StaticImageData;
+  source_code?: string;
+  live_demo?: string;
 }
-const ProjectCard = ({ title, description, image,source_code,live_demo }: ProjectTypes) => {
+
+const ProjectCard = ({ title, description, image, source_code, live_demo }: ProjectTypes) => {
   return (
-    <div className="p-1">
-      <Card className="shadow-md rounded-lg p-4">
-        <CardContent className="relative flex flex-col items-center justify-center p-6">
-          <div className="w-full flex justify-end size-1 cursor-pointer" onClick={() => window.open(live_demo || source_code)}>
-            <SquareArrowOutUpRight className="size-4 " />
+    <div className="p-1 max-w-full mx-auto">
+      <Card className="rounded-2xl p-4 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-lg transition-shadow duration-300 min-h-[450px] flex flex-col">
+        <div className="flex justify-end mb-2">
+          <SquareArrowOutUpRight
+            className="w-5 h-5 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
+            onClick={() => window.open(live_demo || source_code, "_blank")}
+            aria-label="Open project live demo or source code"
+            role="button"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden flex justify-center mb-4 rounded-md">
+          <Image
+            src={image || "https://dummyimage.com/512x512/cccccc/000000&text=Image+Not+Available"}
+            alt={`${title} project image`}
+            className="w-full h-full object-cover"
+            width={200}
+            height={200}
+            priority
+          />
+        </div>
+        <CardContent className="flex flex-col flex-1 justify-between items-center text-center p-0">
+          <div>
+            <h3 className="font-semibold text-lg text-black dark:text-white mb-2">{title}</h3>
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4 px-2 line-clamp-3">
+              {description}
+            </p>
           </div>
-          <div className="w-full h-80 overflow-hidden flex justify-center">
-            <Image
-              src={image}
-              alt="Project Image"
-              className="md:w-5/6 h-52 w-full object-contain rounded-md"
-            />
-          </div>
-          <div className="absolute bottom-28 text-cyan-50 md:text-xl sm:p-2 p-5 text-sm font-bold text-nowrap">
-            {title}
-          </div>
-          <div className="absolute bottom-20  md:text-[18px] text-xs pl-2 text md:pl-10">
-            {description}
-          </div>
-          <div className="flex justify-between w-full">
-            <ButtonWithIcon link={source_code}><Github className="size-4"/> <p>Source code</p></ButtonWithIcon>
-            <ButtonWithIcon link={live_demo}><View className="size-4" /><p>Live demo</p></ButtonWithIcon>
+          <div className="mt-auto flex justify-center gap-3">
+            <ButtonWithIcon link={source_code} disabled={!source_code}>
+              <Github className="w-4 h-4" />
+              <span className="hidden sm:inline">Source</span>
+            </ButtonWithIcon>
+            <ButtonWithIcon link={live_demo} disabled={!live_demo}>
+              <Globe className="w-4 h-4" />
+              <span className="hidden sm:inline">Demo</span>
+            </ButtonWithIcon>
           </div>
         </CardContent>
       </Card>
@@ -41,18 +57,23 @@ const ProjectCard = ({ title, description, image,source_code,live_demo }: Projec
   );
 };
 
-interface ButtonTypes{
-  children : React.ReactNode,
-  link : string
+interface ButtonTypes {
+  children: React.ReactNode;
+  link?: string;
+  disabled?: boolean;
 }
 
-export const ButtonWithIcon = ({ children, link }: ButtonTypes) => {
+export const ButtonWithIcon = ({ children, link, disabled = false }: ButtonTypes) => {
   return (
     <motion.button
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.98 }}
-      onClick={() => window.open(link)}
-      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow transition duration-200"
+      whileHover={disabled ? {} : { scale: 1.05 }}
+      whileTap={disabled ? {} : { scale: 0.95 }}
+      onClick={() => !disabled && window.open(link, "_blank")}
+      disabled={disabled}
+      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition duration-200
+        ${disabled
+          ? "bg-gray-300 cursor-not-allowed text-gray-500"
+          : "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"}`}
     >
       {children}
     </motion.button>
