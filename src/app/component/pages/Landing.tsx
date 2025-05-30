@@ -9,6 +9,7 @@ import GlowEffect from "../ui/GlowEffect";
 import ScrollEffect from "../ui/ScrollEffect";
 import WhoAmI from "../WhoAmI";
 import TimelineDisplay from "../Timeline";
+import Certificates from "../Certificates";
 
 
 
@@ -25,6 +26,7 @@ export function Landing() {
       <Skills />
       <TimelineDisplay/>
       <Projects />
+      <Certificates/>
       <KnowMe />
       <Footer />
     </div>

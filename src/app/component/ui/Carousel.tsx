@@ -2,7 +2,7 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
+    // CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import mypic1 from "../../../lib/store/mypics/pic1.jpg";
@@ -38,7 +38,8 @@ const Carousell = () => {
                         />
                     </CarouselItem>
                 </CarouselContent>
-                <CarouselNext />
+                {/* <CarouselNext /> */}  
+                {/* It was causing overflow  */}
             </Carousel>
         </div>
     );

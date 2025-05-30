@@ -1,4 +1,5 @@
 "use client";
+import Highlighter from "@/app/component/ui/Highlighter";
 import {
   useScroll,
   useTransform,
@@ -36,14 +37,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto  px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          My journey
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          My Learning and my Professional Journey
-        </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 flex flex-col items-center justify-center text-center">
+        <div className="w-full">
+          <Highlighter>
+            <h2 className="inline-block text-lg sm:text-2xl md:text-4xl  text-black dark:text-white relative z-10">
+              Experience
+            </h2>
+          </Highlighter>
+          <div className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-base max-w-md mx-auto p-4">
+            Where I applied my Skills?
+          </div>
+        </div>
       </div>
+
+      
+
+
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (

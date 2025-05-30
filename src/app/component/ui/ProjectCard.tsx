@@ -46,14 +46,17 @@ interface ButtonTypes{
   link : string
 }
 
-export const ButtonWithIcon = ({ children,link}: ButtonTypes ) => {
-  return <motion.button
-    whileHover={{ background: "#2680F3" }}
-    onClick={()=>window.open(link)}
-    className='bg-buttonColor-primary  border-slate-600 p-1 rounded-lg text-sm shadow-md drop-shadow-lg dark:border-white dark: dark:shadow-sm w-20  text-nowrap min-w-fit flex items-center justify-center space-x-1'>
-    {children}
-  </motion.button>
-
-}
+export const ButtonWithIcon = ({ children, link }: ButtonTypes) => {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={() => window.open(link)}
+      className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow transition duration-200"
+    >
+      {children}
+    </motion.button>
+  );
+};
 
 export default ProjectCard;

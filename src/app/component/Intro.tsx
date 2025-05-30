@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CodeBlock from "./ui/CodeBlock";
+import Highlighter from "./ui/Highlighter";
 
 const aboutme = [
     "Software Engineer.",
@@ -39,6 +40,13 @@ const Intro = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                     className="md:text-5xl text-xl sm:text-4xl"
                 >
+                    <div className="flex justify-center items-center relative z-10">
+                        <Highlighter>
+                            <div className="flex justify-center items-center relative z-10">
+                                Who am I?
+                            </div>
+                        </Highlighter>
+                    </div>
                     I am Abhijit Jha, a {" "}
                     <AnimatePresence mode="wait">
                         <motion.span
