@@ -30,7 +30,7 @@ const SkillContainer = ({
         {skillName}
       </div>
       <motion.div
-        className="grid lg:grid-cols-6  grid-cols-3 gap-4"
+        className="grid lg:grid-cols-6 md:grid-cols-3 md:gap-4 gap-1 grid-cols-2"
         variants={{
           initial: { opacity: 0 },
           animate: { opacity: 1 },

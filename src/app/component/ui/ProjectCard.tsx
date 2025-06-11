@@ -14,8 +14,8 @@ interface ProjectTypes {
 
 const ProjectCard = ({ title, description, image, source_code, live_demo }: ProjectTypes) => {
   return (
-    <div className="p-1 max-w-full mx-auto">
-      <Card className="rounded-2xl p-4 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-lg transition-shadow duration-300 min-h-[450px] flex flex-col">
+    <div className="p-1 max-w-full ">
+      <Card className="rounded-2xl p-4 bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 shadow-md hover:shadow-lg transition-shadow duration-300 min-h-[450px] flex flex-col ">
         <div className="flex justify-end mb-2">
           <SquareArrowOutUpRight
             className="w-5 h-5 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Martel_Sans } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./component/utils/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const martelS = Martel_Sans({
 export const metadata: Metadata = {
   title: "Abhijit Jha | Full Stack & Mobile App Developer",
   description:
-    "Welcome to the official portfolio of Abhijit Jha — a third-year engineering student, full-stack developer, React Native expert, and stock market investor. Explore my work in web, mobile, blockchain, and more at abhijit.website.",
+    "Welcome to the official portfolio of Abhijit Jha — a fourth-year engineering student, full-stack developer, and stock market investor. Explore my work in web, mobile, and more at abhijit.website.",
   keywords: [
     "Abhijit Jha",
     "abhijit.website",
@@ -74,7 +75,9 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          <main >{children}</main>
+          <main >{children}
+            <Analytics />
+          </main>
         </ThemeProvider>
       </body>
     </html>
